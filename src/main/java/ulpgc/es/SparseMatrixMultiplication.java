@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class SparseMatrixMultiplication {
 
-    public static Map<Integer, Map<Integer, Double>> toSparse(double[][] matrix) {
-        Map<Integer, Map<Integer, Double>> sparseMatrix = new HashMap<>();
+    public static Map<Integer, Map<Integer, Integer>> toSparse(int[][] matrix) {
+        Map<Integer, Map<Integer, Integer>> sparseMatrix = new HashMap<>();
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (matrix[i][j] != 0) {
@@ -17,12 +17,12 @@ public class SparseMatrixMultiplication {
         return sparseMatrix;
     }
 
-    public static double[][] multiplySparse(double[][] a, double[][] b) {
+    public static int[][] multiplySparse(int[][] a, int[][] b) {
         int n = a.length;
-        double[][] result = new double[n][n];
+        int[][] result = new int[n][n];
 
-        Map<Integer, Map<Integer, Double>> sparseA = toSparse(a);
-        Map<Integer, Map<Integer, Double>> sparseB = toSparse(b);
+        Map<Integer, Map<Integer, Integer>> sparseA = toSparse(a);
+        Map<Integer, Map<Integer, Integer>> sparseB = toSparse(b);
 
         for (int i : sparseA.keySet()) {
             for (int k : sparseA.get(i).keySet()) {
@@ -37,4 +37,3 @@ public class SparseMatrixMultiplication {
         return result;
     }
 }
-

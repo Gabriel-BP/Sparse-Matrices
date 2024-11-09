@@ -1,9 +1,9 @@
 package ulpgc.es;
 
 public class BasicMatrixMultiplication {
-    public static double[][] multiply(double[][] a, double[][] b) {
+    public static int[][] multiply(int[][] a, int[][] b) {
         int n = a.length;
-        double[][] result = new double[n][n];
+        int[][] result = new int[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 for (int k = 0; k < n; k++) {
